@@ -1,0 +1,12 @@
+﻿生成启动时间为 2019/11/2 18:30:12。
+     1>项目“D:\Bit-Study-Offer\代码存储\C++-Code\list\list\list.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         E:\软件\vs2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt list.cpp
+         list.cpp
+     1>d:\bit-study-offer\代码存储\c++-code\list\list\list.cpp(246): error C2374: “l2”: 重定义；多次初始化
+                 d:\bit-study-offer\代码存储\c++-code\list\list\list.cpp(234) : 参见“l2”的声明
+     1>已完成生成项目“D:\Bit-Study-Offer\代码存储\C++-Code\list\list\list.vcxproj”(Rebuild 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:01.06
