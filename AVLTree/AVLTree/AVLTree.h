@@ -129,7 +129,7 @@ public:
 		Node* subRL = subR->_left;
 		parent->_right = subRL;
 
-		if (subRL)//判断是否为空，直接就会出错
+		if (subRL)//判断是否为空，如果不判断就会出错
 		{
 			subRL->_parent = parent;
 		}
