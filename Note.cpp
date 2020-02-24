@@ -51,3 +51,93 @@ using namespace std;
 //	  return 0;
 //  }
 //
+//int main()
+//{
+//	cout << "Hello world!!!" << endl; 
+//	return 0;
+//}
+//int x = 100;
+//int h = 200;
+//void TestFunc(int a = h, int b = x, int c = 30)//3. 缺省值必须是常量或者全局变量
+//{
+//	cout << "a = " << a << endl;
+//	cout << "b = " << b << endl;
+//	cout << "c = " << c << endl;
+//}
+//int main()
+//{
+//	TestFunc();
+//	system("pause");
+//	return 0;
+//}
+
+////a.h
+//void TestFunc(int a = 10);
+//
+////a.c
+//void TestFunc(int a = 20)
+//{
+//
+//}
+//// 注意：如果生命与定义位置同时出现，恰巧两个位置提供的值不同，那编译器就无法确定到底该用那个缺省值。 
+
+//int Add(int left, int right)
+//{
+//	return left + right;
+//}
+//
+//double Add(double left, double right)
+//{
+//	return left + right;
+//}
+//
+//long Add(long left, long right)
+//{
+//	return left + right;
+//}
+//
+//int main()
+//{
+//	Add(10, 20); Add(10.0, 20.0); Add(10L, 20L);
+//	return;
+//}
+
+//extern "C"int Add(double left, double right);
+//int main()
+//{
+//	cout << Add(5, 6) << endl;
+//	system("pause");
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 10;
+//	int& b = a;
+//	cout << a << endl << b << endl;
+//	cout << &a << endl << &b << endl;
+//	system("pause");
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 10;
+//	//int &ra;//这句代码是错误的
+//	int& pa = a;
+//	int& ppa = a;
+//	system("pause");
+//	return 0;
+//}
+
+
+//void TestConstRef()
+//{
+//	const int a = 10;
+//	//int& ra = a;   // 该语句编译时会出错，a为常量
+//	const int& ra = a;//因为 a 是只读的，所以 ra 也只能变为只读
+//
+//	// int& b = 10; // 该语句编译时会出错，b为常量
+//	const int& b = 10;
+//
+//	double d = 12.34;
+//	//int& rd = d; // 该语句编译时会出错，类型不同
+//	const int& rd = d;//
