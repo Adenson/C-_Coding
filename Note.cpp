@@ -141,3 +141,90 @@ using namespace std;
 //	double d = 12.34;
 //	//int& rd = d; // 该语句编译时会出错，类型不同
 //	const int& rd = d;//
+
+//void Swap(int& left, int& right)
+//{
+//	int tmp = left;
+//	left = right;
+//	right = tmp;
+//}
+//int main()
+//{
+//	int a = 20;
+//	int b = 10;
+//	Swap(a, b);
+//	cout << a << endl << b << endl;
+//	//输出为 10 ，20，可以看出已经交换 a 和 b 的值
+//	system("pause");
+//	return 0;
+//}
+
+//int& TestRefReturn(int& pa)
+//{
+//	pa += 3;
+//	return pa;
+//}
+//int main( )
+//{
+//	int a = 10;
+//	int& ret = TestRefReturn(a);
+//	cout << ret << endl;
+//	system("pause");
+//	return 0;
+//}
+
+//int& Add(int a, int b)
+//{
+//	int c = a + b;
+//	return c;
+//}
+//int main()
+//{
+//	int& ret = Add(1, 2);
+//	Add(3, 4);
+//	cout << "Add(1, 2) is :" << ret << endl;//思考为什么输出为 7 ?
+//	system("pause");
+//	return 0;
+//}
+
+//#include <time.h>
+//struct A
+//{
+//	int a[10000];
+//};
+//void TestFunc1(A a)
+//{}
+//void TestFunc2(A& a)
+//{}
+//void TestRefAndValue()
+//{
+//	A a;
+//	// 以值作为函数参数
+//	size_t begin1 = clock();
+//	for (size_t i = 0; i < 10000; ++i)
+//	{
+//		TestFunc1(a);
+//	}
+//	size_t end1 = clock();
+//	// 以引用作为函数参数
+//	size_t begin2 = clock();
+//	for (size_t i = 0; i < 10000; ++i)
+//	{
+//		TestFunc2(a);
+//	}
+//	size_t end2 = clock();
+//	// 分别计算两个函数运行结束后的时间
+//	cout << "TestFunc1(int*)-time:" << end1 - begin1 << endl;
+//	cout << "TestFunc2(int&)-time:" << end2 - begin2 << endl;
+//}
+//// 运行多次，检测值和引用在传参方面的效率区别
+//int main()
+//{
+//	for (int i = 0; i < 10; ++i)
+//	{
+//		TestRefAndValue();
+//	}
+//	system("pause");
+//	return 0;
+//}
+//
