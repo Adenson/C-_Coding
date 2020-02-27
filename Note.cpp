@@ -300,3 +300,81 @@ using namespace std;
 //{ 
 //	return 10; 
 //}
+//
+//int main()
+//{
+//	int a = 10;
+//	auto b = a;
+//	auto c = &a;
+//	auto d = 'a';
+//	auto e = TestAuto();
+//	cout << typeid(b).name() << endl;//输出为 int
+//	cout << typeid(c).name() << endl;//输出为 int*
+//	cout << typeid(d).name() << endl;//输出为 char
+//	cout << typeid(e).name() << endl;//输出为 int
+//
+//	//auto f; 无法通过编译，使用auto定义变量时必须对其进行初始化
+//	system("pause");
+//	return 0;
+//}
+
+//int main()
+//{
+//	int x = 10;
+//	auto a = &x;
+//	auto* b = &x;
+//	//a 和 b 都是 x 地址
+//	//用auto声明指针类型时,用 auto 和 auto* 没有任何区别
+//	auto& c = x;
+//	//但用auto声明引用类型时则必须加 &
+//	cout << typeid(a).name() << endl;//输出为 int*
+//	cout << typeid(b).name() << endl;//输出为 int* 
+//	cout << typeid(c).name() << endl;//输出为 int
+//
+//	*a = 20;
+//	cout << x << endl;//输出为 20
+//
+//	*b = 30;
+//	cout << x << endl;//输出为 30
+//
+//	 c = 40;
+//	cout << x << endl;//输出为 40
+//	system("pause");
+//	return 0;
+//}
+
+//void TestAuto()
+//{
+//	auto a = 1, b = 2;
+//	auto c = 3, d = 4.0;
+//    //该行代码会编译失败，因为c和d的初始化表达式类型不同
+//} 
+
+// 此处代码编译失败，auto不能作为形参类型，因为编译器无法对a的实际类型进行推导 
+//void TestAuto(auto a)
+//{
+//
+//}
+
+//void TestAuto()
+//{
+//	int a[] = { 1, 2, 3 };
+//	auto b[] = { 4，5，6 }; //错误，auto 不能用来定义数组
+//}
+
+//void TestFor()
+//{
+//	int array[] = { 1, 2, 3, 4, 5 };
+//
+//	for (auto& e : array)
+//	cout << e << " ";
+//
+//	for (int e : array)
+//	cout << e << " ";
+//}
+//int main()
+//{
+//	TestFor();
+//	system("pause");
+//	return 0;
+//}
