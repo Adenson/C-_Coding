@@ -378,3 +378,56 @@ using namespace std;
 //	system("pause");
 //	return 0;
 //}
+//void f1(int*)
+//{
+//	cout << "f(int*)" << endl;
+//}
+//void f1(int x)
+//{
+//	cout << "f(int)" << endl;
+//}
+//int main()
+//{
+//	f1(NULL);
+//
+//	f1((int*)NULL);
+//
+//	f1(0);
+//	system("pause");
+//	return 0;
+//}
+
+//class className
+//{ 
+//	// 类体：由成员函数和成员变量组成
+//}; // 一定要注意后面的分号
+
+
+//class Person
+//{
+//public:
+//	void Init(int height,int age)
+//	{
+//		_height = height;
+//		_age = age;
+//	}
+//	void ShowInfo()
+//	{
+//		cout << _height << "-" << _age << endl;
+//	}
+//public:
+//	int _height;
+//	int _age;
+//};
+////void Person::ShowInfo()
+////{
+////	cout << _height << "-" << _age << endl;
+////}
+//int main()
+//{
+//	Person a;
+//	a.Init(1, 2);
+//	a.ShowInfo();
+//	system("pause");
+//	return 0;
+//}
