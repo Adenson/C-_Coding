@@ -431,3 +431,74 @@ using namespace std;
 //	system("pause");
 //	return 0;
 //}
+//class string
+//{
+//public:
+//	string(const char* str = "jack") 
+//	{ 
+//		_str = (char*)malloc(strlen(str) + 1); 
+//		strcpy(_str, str);
+//	}
+//
+//	~string()
+//	{
+//		cout << "~string()" << endl;
+//		free(_str);
+//	}
+//private:
+//	char* _str;
+//};
+//class Person
+//{ 
+//private:
+//	string _name;
+//	int    _age;
+//};
+//int main()
+//{
+//	Person p;
+//	system("pause");
+//	return 0;
+//}
+
+
+//class Time
+//{
+//public:
+//	Time()
+//	{
+//		cout << "Time()" << endl;
+//	}
+//private:
+//	int _hour;
+//	int _minute;
+//	int _second;
+//};
+
+//class Date
+//{
+//public:
+//	Date(int year = 1900, int month = 1, int day = 1)
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//	void print()
+//	{
+//		cout << _year << '-' << _month << '-' << _day << endl;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//int main()
+//{
+//	Date d1;
+//	Date d2;
+//	d1.print();
+//	d2.print();
+//	system("pause");
+//	return 0;
+//}
