@@ -502,3 +502,57 @@ using namespace std;
 //	system("pause");
 //	return 0;
 //}
+/// 类中既有成员变量，又有成员函数
+//class A1
+//{ 
+//public:
+//	void f1()
+//	{}
+//private:
+//	int _a;
+//};
+//
+//// 类中仅有成员函数
+//class A2
+//{
+//public:
+//	void f2() {}
+//};
+//
+//// 类中什么都没有---空类
+//class A3
+//{
+//
+//};
+//
+//int main()
+//{
+//	cout << sizeof(A1) << endl;//4
+//	cout << sizeof(A2) << endl;//1
+//	cout << sizeof(A3) << endl;//1
+//	system("pause");
+//	return 0;
+//}
+
+//class Date
+//{
+//public:
+//	Date(int year = 1900, int month = 1, int day = 1)
+//	//相当于Date(Date* this, int year = 1900, int month = 1, int day = 1);但是我们不能写出来
+//	{
+//		_year = year;//this->_year = year;
+//		_month = month;//this->_month = month;
+//		_day = day;//this->_day = day;//在成员函数内部我们是可以写出this指针的。
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//int main()
+//{
+//	Date d1(2019, 9, 10);
+//	//相当于Date d1(&d1,2019,1,1);但是我们不能来传递，即不能写出来。
+//	system("pause");
+//	return 0;
+//}
