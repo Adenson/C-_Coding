@@ -3,6 +3,7 @@
 using namespace std;
 #include<algorithm>//find的头文件
 #include<vector>
+#include<map>
 #include<string>
 //
 ////1. 普通的命名空间
