@@ -557,3 +557,60 @@ using namespace std;
 //	system("pause");
 //	return 0;
 //}
+//class Time
+//{
+//public:
+//	Time()
+//	{
+//		cout << "Time()" << endl;
+//	}
+//	/*Time(const Time& t)
+//	{
+//		cout << "Time(const Time& t)" << endl;
+//	}*/
+//	~Time()
+//	{
+//		cout << "~Time()" << endl;
+//	}
+//};
+//
+//class Time
+//{
+//public:
+//	Time()
+//	{
+//		cout << "Time()" << endl;
+//	}
+//	~Time()
+//	{
+//		cout << "~Time()" << endl;
+//	}
+//	Time(const Time& t)
+//	{
+//		cout << "Time(const Time& t)" << endl;
+//	}
+//};
+//class Date
+//{
+//public:
+//	Date()
+//	{
+//		cout << "Date()" << this << endl;
+//	}
+//	~Date()
+//	{
+//		cout << "~Date()" << this << endl;
+//	}
+//	int _year;
+//	int _month;
+//	int _day;
+//	Time _t;
+//};
+//
+//int main()
+//{
+//	Date d1;
+//	Date d2(d1);
+//	system("pause");
+//	return 0;
+//}
