@@ -614,3 +614,63 @@ using namespace std;
 //	system("pause");
 //	return 0;
 //}
+/class String
+//{
+//public:
+//	String(const char* str = "jack")
+//	{
+//		_str = (char*)malloc(strlen(str) + 1);
+//		strcpy(_str, str);
+//	}
+//
+//	 ~String()
+//	 {
+//		 cout << "~String()" << endl;
+//		 free(_str);
+//	 }
+//private: 
+//	char* _str;
+//};
+//
+//int main()
+//{
+//	String s1("hello");
+//	String s2(s1);
+//	cout << &s2 << endl << &s1 << endl;
+//}
+
+//class Date
+//{
+//public:
+//	void Display()
+//	{
+//		
+//		cout << "Display ()" << endl;
+//		cout << "year:" << _year << endl;
+//		cout << "month:" << _month << endl;
+//		cout << "day:" << _day << endl << endl; 
+//
+//} 
+//	void Display() const
+//	{ 
+//		cout << "Display () const" << endl; 
+//		cout << "year:" << _year << endl; 
+//		cout << "month:" << _month << endl; 
+//		cout << "day:" << _day << endl << endl; 
+//	}
+//private:
+//	int _year = 1990; // 年
+//	int _month = 1; // 月  
+//	int _day = 1; // 日 
+//}; 
+//int main()
+//{
+//	Date d1;
+//	d1.Display();
+//
+//	const Date d2;
+//	d2.Display();
+//
+//	system("pause");
+//	return 0;
+//}
