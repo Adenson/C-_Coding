@@ -675,7 +675,83 @@ using namespace std;
 //	return 0;
 //}
 
+//class Time
+//{
+//public:
+//	Time(int hour = 0 ,int minute = 0, int second = 0)
+//	:_hour(hour)
+//	, _minute(minute)
+//	, _second(second)
+//	{
+//		cout << "Time()" << endl;
+//	}
+//private:
+//	int _hour;
+//	int _minute;
+//	int _second;
+//};
 
+//class Date
+//{
+//public:
+//	explicit Date(int year)
+//		:_year(year)
+//		//, _month(month)
+//		//, _day(day)
+//	{
+//		cout << "Date()" << endl;
+//	}
+//	void print()
+//	{
+//		cout << _year << "-" << _month << "-" << _day << endl;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//int main()
+//{
+//	Date d1(2018);
+//	d1.print();
+//
+//	Date d2 = 2019;
+//	d2.print();
+//
+//	system("pause");
+//	return 0;
+//}
+
+//template <typename T>
+
+//void Swap(T& x, T& y)
+//{
+//	T tmp = x;
+//	    x = y;
+//	    y = tmp;
+//}
+
+//T Add(const T& x, const T& y)
+//{
+//	return x + y;
+//}
+//int main()
+//{
+//	int a = 100;
+//	int b = 200;
+//
+//	double c = 12.99;
+//	double d = 13.98763;
+//	//Swap(a, b);
+//
+//	cout << Add<int>(a, d) << endl;
+//
+//	/*cout << a << "-" << b << endl;
+//	Swap(c, d);
+//	cout << c << "-" << d << endl;*/
+//	system("pause");
+//	return 0;
+//}
 
 
 
