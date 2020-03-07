@@ -753,6 +753,46 @@ using namespace std;
 //	return 0;
 //}
 
+//int main()
+//{
+//	string s("string.cpp");
+//	/*cout << s.size() << endl;
+//	cout << s.length() << endl;
+//	cout << s.capacity() << endl;
+//
+//	s.clear();
+//	cout << s.size() << endl;
+//	cout << s.capacity() << endl;*/
+//
+//	//s.resize(10, 'a');
+//	//cout << s.size() << endl;
+//	//cout << s.capacity() << endl;
+//
+//	//s.resize(10);
+//	//cout << s.size() << endl;
+//	//cout << s.capacity() << endl;
+//
+//	/*s.resize(1);
+//	cout << s.size() << endl;
+//	cout << s.capacity() << endl;*/
+//
+//	/*s.reserve(111);*/
+//	//cout << s.size() << endl;
+//	//cout << s.capacity() << endl;
+//	//cout << s.c_str() << endl;
+//
+//	//size_t pos = s.find('.');
+//	//string s2 = s.substr(pos, s.size() - pos);
+//
+//	//cout << suffix << endl;
+//
+//
+//	//cout << *(s.begin()) << endl;
+//
+//	cout << s.c_str() << endl;
+//	system("pause");
+//	return 0;
+//}
 
 
 
