@@ -830,4 +830,26 @@ using namespace std;
 //	return 0;
 //}
 
-
+//#define _CRT_SECURE_NO_WARNINGS 1
+//#include<stdio.h>
+//#include<stdlib.h>
+//#include<assert.h>
+//char* my_strcpy(char* dest, const char* src)
+//{
+//	assert(dest&&src);
+//	char* ret = dest;
+//	while (*dest = *src)
+//	{
+//		dest++;
+//		src++;
+//	}
+//	return ret;
+//}
+//int main()
+//{
+//	char arr[20] = "hello world";
+//	char* str = "change world";
+//	printf("%s\n", my_strcpy(arr, str));
+//	system("pause");
+//	return 0;
+//}
