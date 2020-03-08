@@ -794,5 +794,40 @@ using namespace std;
 //	return 0;
 //}
 
+//int main()
+//{
+//    int a[4][5] = { 0 };
+//	cout << sizeof(a) << endl;//80
+//	cout << sizeof(&a) << endl;//4
+//	cout << sizeof(a + 1) << endl;//4
+//	cout << sizeof(&a + 1) << endl;//4
+//	cout << sizeof(a[0]) << endl;//20
+//	cout << sizeof(a[0] + 1) << endl;//4
+//	cout << sizeof(&a[0]) << endl;//4
+//	cout << sizeof(&a[0] + 1) << endl;//4
+//	system("pause");
+//	return 0;
+//}
+//class Date
+//{
+//public:
+//	Date(int year = 2018)
+//	{
+//		this->_year = year;
+//	}
+//	void printf() const
+//	{
+//		cout << _year << endl;
+//	}
+//private:
+//	int _year;
+//};
+//int main()
+//{
+//	const Date d(2018);
+//	d.printf();
+//	system("pause");
+//	return 0;
+//}
 
 
