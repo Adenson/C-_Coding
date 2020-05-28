@@ -974,4 +974,121 @@ int main()
 }
 
 
+#include<iostream>
+using namespace std;
+#include<vector>
+#include<pthread.h>
+#include<stdio.h>
+#include <semaphore.h>
+#include<unistd.h>
+#define MAX_THR 5
+#define MAX_queue 10
+class RingQueue
+{
+  private:
+    vector<int> _queue;
+    int _capacity;
+    int _write_step;
+    int _read_step;
+    sem_t _sem_lock;
+    sem_t _sem_pro;
+    sem_t _sem_con;
+  public:
+    RingQueue(int max_queue)
+       :_queue(max_queue)
+       ,_capacity(max_queue)
+       ,_write_step(0)
+       ,_read_step(0)
+  {
+    sem_init(&_sem_lock,0,1);
+    sem_init(&_sem_pro,0,max_queue);
+    sem_init(&_sem_con,0,0);
+  }
+
+    ~RingQueue()
+    {
+      sem_destroy(&_sem_lock);
+      sem_destroy(&_sem_pro);
+      sem_destroy(&_sem_con);
+    }
+
+    bool Push(int data)
+    {
+      sem_wait(&_sem_pro);
+
+      sem_wait(&_sem_lock);
+      _queue[_write_step] = data;
+      _write_step = (_write_step + 1) % _capacity;
+      sem_post(&_sem_lock);
+
+      sem_post(&_sem_con);
+      return true;
+    }
+
+    bool Pop(int& data)
+    {
+      sem_wait(&_sem_con);
+
+      sem_wait(&_sem_lock);
+      data = _queue[_read_step];
+      _read_step = (_read_step + 1) % _capacity;
+      sem_post(&_sem_lock);
+
+      sem_post(&_sem_pro);
+      return true;
+    }
+};
+
+int num = 0;
+void* pro_thr(void* argc)
+{
+  RingQueue* queue = (RingQueue*)argc;
+  while(1)
+  {
+    queue->Push(num);
+    printf("pro push a data --- %d\n",num++);
+    sleep(1);
+  }
+}
+
+void* con_thr(void* argc)
+{
+  RingQueue* queue = (RingQueue*)argc;
+  while(1)
+  {
+    int data = 0;
+    queue->Pop(data);
+    printf("con get a data --- %d\n",data);
+  }
+}
+int main()
+{
+  pthread_t pro_tid[MAX_THR];
+  pthread_t con_tid[MAX_THR];
+  RingQueue queue(10);
+  for(int i = 0; i < MAX_THR; i++)
+  {
+    int ret = pthread_create(&pro_tid[i],NULL,pro_thr,(void*)&queue);
+    if(ret != 0)
+    {
+      cerr << "pro_thr create error\n";
+      return 0;
+    }
+  }
+  for(int i = 0; i < MAX_THR; i++)
+  {
+    int ret = pthread_create(&con_tid[i],NULL,con_thr,(void*)&queue);
+    if(ret != 0)
+    {
+      cerr << "con_thr create error\n";
+      return 0;
+    }
+  }
+  for(int i = 0; i < MAX_THR; i++)
+  {
+    pthread_join(pro_tid[i],NULL);
+    pthread_join(con_tid[i],NULL);
+  }
+  return 0;
+}
 
