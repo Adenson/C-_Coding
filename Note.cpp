@@ -855,3 +855,15 @@ int main()
   return 0;
 }
 
+class Solution {
+public:
+    int minCount(vector<int>& coins) 
+    {
+        int counts = 0;
+        for(int i = 0; i < coins.size(); i++)
+        {
+            counts += coins[i] % 2 == 0 ? coins[i] / 2 :coins[i] / 2 + 1;
+        }
+        return counts;
+    }
+};
