@@ -867,3 +867,51 @@ public:
         return counts;
     }
 };
+
+int main()
+{
+	string str[] = { "香蕉", "苹果", "橘子", "香蕉" };
+	map<string, int> countMap;
+
+	//for (auto& e : str)
+	//{
+	//	map<string, int>::iterator it = countMap.find(e);
+	//	if (it != countMap.end())
+	//	{
+	//		it->second++;
+	//	}
+	//	else{
+	//		countMap.insert(pair<string, int>(e, 1));
+	//	}
+	//}
+
+	//for (auto e : str)
+	//{
+	//	pair<map<string, int>::iterator, bool> ret = countMap.insert(pair<string, int>(e, 1));
+
+	//	//make_pair()是一个函数模板，被设置成为内敛函数，可以方便我们使用的时候不用说明类型
+	//	/*template<class K,class V>
+	//	inline make_pair<const K& k,const V& v)
+	//	{
+	//		return pair<K, V>(k, v);
+	//	}*/
+	//	auto ret = countMap.insert(make_pair(e, 1));
+	//	if (ret.second == false)
+	//	{
+	//		ret.first->second++;
+	//	}
+	//}
+
+	//V& operator[](cosnt K& k)
+	//{
+	//	pair<map<K, V>::iterator, bool> ret = insert(pair<K,V>(k,v()));
+	//	return ret.first->second;
+	//}
+
+	for (auto e : str)
+	{
+		countMap[e]++;
+	}
+	system("pause");
+	return 0;
+}
