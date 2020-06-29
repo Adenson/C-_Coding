@@ -915,3 +915,137 @@ int main()
 	system("pause");
 	return 0;
 }
+class Solution {
+public:
+    struct compare
+    {
+        bool operator()(pair<string,int>& l,pair<string,int>& r)
+        {
+            if(l.second > r.second)
+            {
+                return true;
+            }
+            else if(l.second == r.second)
+            {
+                if(l.first < r.first)
+                {
+                    return true;
+                }
+                return false;
+            }
+            else{
+                return false;
+            }
+        }
+    };
+    vector<string> topKFrequent(vector<string>& words, int k) 
+    {
+        map<string,int> countMap;
+        for(auto& e : words)
+        {
+            countMap[e]++;
+        }
+        vector<pair<string,int>> v;
+        for(auto& e : countMap)
+        {
+            v.push_back(e);
+        }
+        sort(v.begin(),v.end(),compare());
+
+        vector<string> result;
+        for(int i = 0; i < k; i++)
+        {
+            result.push_back(v[i].first);
+        }
+
+        return result;
+    }
+};
+
+class Solution {
+public:
+    struct compare
+    {
+        bool operator()(pair<string,int>& l,pair<string,int>& r)
+        {
+            if(l.second > r.second)
+            {
+                return true;
+            }
+            else if(l.second == r.second)
+            {
+                if(l.first < r.first)
+                {
+                    return true;
+                }
+                return false;
+            }
+            else{
+                return false;
+            }
+        }
+    };
+    vector<string> topKFrequent(vector<string>& words, int k) 
+    {
+        map<string,int> countMap;
+        for(auto& e : words)
+        {
+            countMap[e]++;
+        }
+        	priority_queue<pair<string, int>, vector<pair<string, int>>, compare> pq;
+        int i = 0;
+        for(auto& e : countMap)
+        {
+            if(i < k)
+            {
+                pq.push(e);
+                i++;
+            }
+            else{
+                if(e.second > pq.top().second)
+                {
+                    pq.pop();
+                    pq.push(e);
+                }
+            }
+        }
+        vector<string> result;
+        for(int i = 0; i < k; i++)
+        {
+            result.push_back(pq.top().first);
+            pq.pop();
+        }
+        reverse(result.begin(),result.end());
+        return result;
+    }
+};
+class Solution {
+public:
+
+    vector<string> topKFrequent(vector<string>& words, int k) 
+    {
+        map<string,int> countMap;
+        for(auto& e : words)
+        {
+            countMap[e]++;
+        }
+
+        multimap<int,string,greater<int>> mm;
+        for(auto& e : countMap)
+        {
+            mm.insert(make_pair(e.second,e.first));
+        }
+
+        int i = 0;
+        vector<string> result;
+        for(auto& e : mm)
+        {
+            if(i < k)
+            {
+                result.push_back(e.second);
+                ++i;
+            }
+        }
+        return result;
+    }
+};
