@@ -1084,3 +1084,59 @@ private:
 	vector<int> _bit;
 	size_t _bitCount;
 };
+//class A
+//{
+//public:
+//	int _a;
+//};
+//
+//class B:virtual public A
+//{
+//public:
+//	int _b;
+//};
+//
+//class C :virtual public A
+//{
+//public:
+//	int _c;
+//};
+//
+//class D :public B, public C
+//{
+//public:
+//	int _d;
+//};
+
+class B
+{
+public:
+	virtual B* Buyticket()
+	{
+		cout << "B" << endl;
+		return nullptr;
+	}
+};
+
+class A:public B
+{
+public:
+	A* Buyticket()
+	{
+		cout << "A" << endl;
+		return nullptr;
+	}
+};
+
+int main()
+{
+	A a;
+	B* p1 = &a;
+	p1->Buyticket();
+
+	B b;
+	B* p2 = &b;
+	p2->Buyticket();
+	system("pause");
+	return 0;
+}
