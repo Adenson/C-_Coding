@@ -1140,3 +1140,43 @@ int main()
 	system("pause");
 	return 0;
 }
+class singleton
+{
+public:
+	static singleton& GetInstance()
+	{
+		return obj;
+	}
+private:
+	static singleton obj;
+
+	singleton(){};
+	singleton(const singleton& obj) = delete;
+};
+singleton singleton::obj;
+
+#include<mutex>
+class singleton1
+{
+public:
+	static singleton1& GetInstance()
+	{
+		if (_obj == nullptr)
+		{
+			_mutex.lock();
+			if (_obj == nullptr)
+			{
+				_obj = new singleton1;
+			}
+			_mutex.unlock();
+		}
+		return *_obj;
+	}
+private:
+	singleton1(){};
+	singleton1(const singleton1& obj) = delete;
+	static singleton1* _obj;
+	static mutex _mutex;
+};
+singleton1* singleton1::_obj = nullptr;
+mutex singleton1::_mutex;
