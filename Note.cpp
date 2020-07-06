@@ -1180,3 +1180,32 @@ private:
 };
 singleton1* singleton1::_obj = nullptr;
 mutex singleton1::_mutex;
+
+int StrToInt(string str)
+{
+	int flag = 1;
+	int num = 0;
+	int i = 0;
+	if (str[i] == '+')
+	{
+		flag = 1;
+		i++;
+	}
+	else if (str[i] == '-')
+	{
+		flag = -1;
+		i++;
+	}
+	while (str[i] != '\0')
+	{
+		if (str[i] >= '0' && str[i] <= '9')
+		{
+			num = num * 10 + (str[i] - '0');
+			i++;
+		}
+		else{
+			return 0;
+		}
+	}
+	return flag*num;
+}
