@@ -1118,28 +1118,6 @@ public:
 	}
 };
 
-class A:public B
-{
-public:
-	A* Buyticket()
-	{
-		cout << "A" << endl;
-		return nullptr;
-	}
-};
-
-int main()
-{
-	A a;
-	B* p1 = &a;
-	p1->Buyticket();
-
-	B b;
-	B* p2 = &b;
-	p2->Buyticket();
-	system("pause");
-	return 0;
-}
 class singleton
 {
 public:
