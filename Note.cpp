@@ -1187,3 +1187,32 @@ int StrToInt(string str)
 	}
 	return flag*num;
 }
+void BubbleSort(int* arr, int n)
+{
+	while (--n)
+	{
+		int counts = 0;
+		for (int i = 0; i < n; i++)
+		{
+			if (arr[i]>arr[i + 1])
+			{
+				counts++;
+				swap(arr[i], arr[i + 1]);
+			}
+		}
+		if (counts == 0)
+			return;
+	}
+}
+int main()
+{
+	int arr[] = { 5, 4, 3, 2, 1 };
+	int size = sizeof(arr) / sizeof(arr[0]);
+	BubbleSort(arr, size);
+	for (auto e : arr)
+	{
+		cout << e << endl;
+	}
+	system("pause");
+	return 0;
+}
