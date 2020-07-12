@@ -1216,3 +1216,220 @@ int main()
 	system("pause");
 	return 0;
 }
+
+void InsertSort(int* arr, int size)
+{
+	for (int i = 0; i < size - 1; i++)
+	{
+		if (arr[i] > arr[i + 1])
+		{
+			int j = i;
+			int tmp = arr[i + 1];
+			for (j; j >= 0 && arr[j] > arr[j + 1]; j--)
+			{
+				swap(arr[j], arr[j + 1]);
+			}
+			arr[j + 1] = tmp;
+		}
+	}
+}
+
+void ShellSort(int* arr, int size)
+{
+	int gap = size;
+	while (gap > 1)
+	{
+		gap = gap / 3 + 1;
+		for (int i = 0; i < size - gap; i++)
+		{
+			if (arr[i]>arr[i + gap])
+			{
+				int j = i;
+				int tmp = arr[i + gap];
+				for (j; j >= 0 && arr[j] > arr[j + gap]; j -= gap)
+				{
+					swap(arr[j], arr[j + gap]);
+				}
+				arr[j + gap] = tmp;
+			}
+		}
+	}
+}
+
+void SelectSort(int* arr, int size)
+{
+	int begin = 0;
+	int end = size - 1;
+	int min_index = 0;
+	while (begin <= end)
+	{
+		min_index = begin;
+		for (int i = begin; i <= end; i++)
+		{
+			if (arr[i] < arr[min_index])
+			{
+				min_index = i;
+			}
+		}
+		swap(arr[begin], arr[min_index]);
+		begin++;
+	}
+}
+
+void adjustUp(int* arr, int index)
+{
+	int child = index;
+	int parent = (index - 1) / 2;
+	while (child > 0)
+	{
+		if (arr[child] > arr[parent])
+		{
+			swap(arr[child], arr[parent]);
+			child = parent;
+			parent = (child - 1) / 2;
+		}
+		else{
+			break;
+		}
+	}
+}
+void adjustDown(int* arr, int index,int size)
+{
+	int parent = index;
+	int child = parent * 2 + 1;
+	while (child <= size - 1)
+	{
+		if (arr[child] < arr[child + 1] && child + 1 <= size - 1)
+		{
+			child = child + 1;
+		}
+		if (arr[child]>arr[parent])
+		{
+			swap(arr[parent], arr[child]);
+			parent = child;
+			child = parent * 2 + 1;
+		}
+		else{
+			break;
+		}
+	}
+}
+void HeapSort(int* arr, int size)
+{
+	//for (int index = (size - 1 - 1) / 2; index >= 0; index--)
+	//{
+	//	adjustDown(arr, index, size);
+	//}
+
+	for (int index = size - 1; index >= 0; index--)
+	{
+		adjustUp(arr, index);
+	}
+	for (int i = --size; i >= 0; i--)
+	{
+		swap(arr[0], arr[i]);
+		adjustDown(arr, 0, i);
+	}
+}
+
+void BubbleSort(int* arr, int size)
+{
+	while (--size)
+	{
+		int  counts = 0;
+		for (int i = 0; i < size; i++)
+		{
+			if (arr[i]>arr[i + 1])
+			{
+				counts++;
+				swap(arr[i], arr[i + 1]);
+			}
+		}
+		if (counts == 0)
+		{
+			return;
+		}
+	}
+}
+
+int _QuickSort(int* arr, int left, int right)
+{
+	int key = arr[right];
+	int key_index = right;
+	while (left < right)
+	{
+		while (left < right && arr[left] <= key)
+		{
+			left++;
+		}
+		while (left < right && arr[right] >= key)
+		{
+			right--;
+		}
+		swap(arr[left], arr[right]);
+	}
+	swap(arr[left], arr[key_index]);
+	return left;
+}
+void QuickSort(int* arr, int left,int right)
+{
+	if (left >= right){
+		return;
+	}
+	int ret = _QuickSort(arr, left, right);
+	QuickSort(arr, left, ret - 1);
+	QuickSort(arr, ret + 1, right);
+}
+
+void CountSort(int* arr, int size)
+{
+	int maxNum = arr[0];
+	int minNum = arr[0];
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] > maxNum)
+			maxNum = arr[i];
+		if (arr[i] < minNum)
+			minNum = arr[i];
+	}
+
+	int range = maxNum - minNum + 1;
+	int* count = new int[range];
+	memset(count, 0, sizeof(range)*range);
+	for (int j = 0; j < size; j++)
+	{
+		count[arr[j] - minNum]++;
+	}
+
+	int j = 0;
+	for (int i = 0; i < range; i++)
+	{
+		while (count[i]--)
+		{
+			arr[j++] = i + minNum;
+		}
+	}
+}
+
+int BinarySearch(int* arr, int size, int num)
+{
+	int left = 0;
+	int right = size - 1;
+	while (left <= right)
+	{
+		int mid = left + (right - left) / 2;
+		if (num > arr[mid])
+		{
+			left = mid + 1;
+		}
+		else if (num < arr[mid])
+		{
+			right = mid - 1;
+		}
+		else
+		{
+			return left;
+		}
+	}
+	return -1;
+}
