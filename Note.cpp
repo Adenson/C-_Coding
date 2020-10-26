@@ -5,6 +5,7 @@ using namespace std;
 #include<vector>
 #include<map>
 #include<string>
+
 //
 ////1. 普通的命名空间
 //  namespace N1// N1为命名空间的名称
